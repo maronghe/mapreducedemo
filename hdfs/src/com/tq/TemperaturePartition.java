@@ -4,16 +4,14 @@ import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.mapreduce.lib.partition.HashPartitioner;
 
 /**
- * Fen qu
- * @author zhjzhang
+ * 天气分区类
+ * @author 马荣贺
  *
  */
-public class TQPartition extends HashPartitioner<Weather, IntWritable>{
+public class TemperaturePartition extends HashPartitioner<Weather, IntWritable>{
 
 	@Override
 	public int getPartition(Weather weather, IntWritable value, int numReduceTasks) {
-		// TODO Auto-generated method stub
-//		return super.getPartition(key, value, numReduceTasks);
 		return (weather.getYear() - 1990) % numReduceTasks;
 	}
 

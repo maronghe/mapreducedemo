@@ -1,6 +1,12 @@
 package com.fof;
 
-public class FoF {
+/**
+ * Utils
+ * @author 马荣贺
+ *
+ */
+public class FOFUtils {
+	
 	public static String format(String f1,String f2) {
 		if(f1.compareTo(f2) > 0) {
 			return f2 + "-" + f1;

@@ -4,9 +4,14 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.io.WritableComparator;
 
-public class Group2  extends WritableComparator{
+/**
+ * 二度朋友关系Group
+ * @author 马荣贺
+ *
+ */
+public class FofGroup  extends WritableComparator{
 	
-	public Group2() {
+	public FofGroup() {
 		super(Text.class,true);
 	}
 

@@ -1,4 +1,4 @@
-package com.hdfs;
+package com.wc;
 
 import java.io.IOException;
 
@@ -8,13 +8,17 @@ import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.util.StringUtils;
 
 
-public class SxtMapper extends Mapper<LongWritable, Text, Text , LongWritable>{
+/**
+ * Mapper
+ * @author 马荣贺
+ *
+ */
+public class WordCountMapper extends Mapper<LongWritable, Text, Text , LongWritable>{
 
 	@Override
 	protected void map(LongWritable key, Text value, Mapper<LongWritable, Text, Text, LongWritable>.Context context)
 			throws IOException, InterruptedException {
 		String str = value.toString();
-		System.out.println("Mappppppp  str + " + str);
 		
 		String[] strs = StringUtils.split(str,' ');
 		

@@ -11,7 +11,12 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.util.StringUtils;
 
-public class TQMapper extends Mapper<LongWritable, Text, Weather, IntWritable>{
+/**
+ * 天气分组类
+ * @author 马荣贺
+ *
+ */
+public class TemperatureMapper extends Mapper<LongWritable, Text, Weather, IntWritable>{
 
 	@Override
 	protected void map(LongWritable key, Text value, Mapper<LongWritable, Text, Weather, IntWritable>.Context context)

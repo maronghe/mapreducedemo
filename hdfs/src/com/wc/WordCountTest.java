@@ -1,6 +1,4 @@
-package com.hdfs;
-
-import java.io.IOException;
+package com.wc;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
@@ -12,8 +10,13 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 
-public class SxtDemo {
-	public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
+/**
+ * 计算单词出现个数的测试类
+ * @author 马荣贺
+ *
+ */
+public class WordCountTest {
+	public static void main(String[] args) throws Exception {
 
 //		System.setProperty("HADOOP_USER_NAME", "logan");// config the user name to process hdfs * mapreduce
 		
@@ -26,10 +29,10 @@ public class SxtDemo {
 		
 		Job job = Job.getInstance();
 		// the enter in our application
-		job.setJarByClass(SxtDemo.class);
+		job.setJarByClass(WordCountTest.class);
 		
-		job.setMapperClass(SxtMapper.class);
-		job.setReducerClass(SxtReduce.class);
+		job.setMapperClass(WordCountMapper.class);
+		job.setReducerClass(WordCountReducer.class);
 
 		// stream process , so must is writable and comparable 
 		job.setMapOutputKeyClass(Text.class);
@@ -48,6 +51,6 @@ public class SxtDemo {
 		FileOutputFormat.setOutputPath(job, outPath);
 		
 		boolean isCompleted = job.waitForCompletion(true);
-		System.out.println("Resulut MapReduce... : " + isCompleted);
+		System.out.println("Result MapReduce... : " + isCompleted);
 	}
 }

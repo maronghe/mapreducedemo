@@ -3,9 +3,14 @@ package com.tq;
 import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.io.WritableComparator;
 
-public class TQGroup extends WritableComparator {
+/**
+ * 排序类
+ * @author 马荣贺
+ *
+ */
+public class TemperatureSort extends WritableComparator{
 
-	public TQGroup() {
+	public TemperatureSort() {
 		super(Weather.class , true);
 	}
 	
@@ -19,6 +24,10 @@ public class TQGroup extends WritableComparator {
 		
 		if(r1 == 0) {
 			int r2 = Integer.compare(w1.getMonth(), w2.getMonth());
+			if(r2 == 0) {
+				return - Integer.compare(w1.getWd(), w2.getWd()); // desc
+			}
+			
 			return r2;
 		}
 		return r1;

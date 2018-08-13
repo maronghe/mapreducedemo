@@ -4,6 +4,12 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.io.WritableComparator;
 
+/**
+ * 二次排序
+ * @author 马荣贺
+ * 
+ *
+ */
 public class Sort2 extends WritableComparator{
 
 	public Sort2() {
