@@ -8,8 +8,8 @@ import org.apache.hadoop.io.WritableComparable;
 
 /**
  * 1996:01:09 22:01:33-15c
- * 
- * @author zhjzhang
+ * Weather POJO
+ * @author Logan
  *
  */
 public class Weather implements WritableComparable<Weather> {

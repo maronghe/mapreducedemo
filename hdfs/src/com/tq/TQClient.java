@@ -18,14 +18,14 @@ public class TQClient {
 		job.setPartitionerClass(TQPartition.class);
 		job.setSortComparatorClass(TQSort.class);
 		job.setGroupingComparatorClass(TQGroup.class);
-		
+		 
 		job.setMapOutputKeyClass(Weather.class);
 		job.setMapOutputValueClass(IntWritable.class);
 		
 		job.setMapperClass(TQMapper.class);
 		job.setReducerClass(TQReduce.class);
 		
-		job.setNumReduceTasks(2);
+		job.setNumReduceTasks(1);
 		
 		FileInputFormat.addInputPath(job, new Path("/weather"));
 		FileOutputFormat.setOutputPath(job, new Path("/weatherout"));
