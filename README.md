@@ -1,2 +1,2 @@
 # mapreducedemo
-MapReduce Demo
+Hadoop Mapreduce demo
