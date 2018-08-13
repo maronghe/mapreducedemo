@@ -1,0 +1,10 @@
+package com.fof;
+
+public class FoF {
+	public static String format(String f1,String f2) {
+		if(f1.compareTo(f2) > 0) {
+			return f2 + "-" + f1;
+		}
+		return f1 + "-" + f2;
+	}
+}
