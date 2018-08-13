@@ -8,6 +8,11 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.util.StringUtils;
 
+/**
+ * 二次Map
+ * @author RongHeMaRongHe
+ *
+ */
 public class Mapper2 extends Mapper<LongWritable, Text, Text, IntWritable> {
 
 	/**
